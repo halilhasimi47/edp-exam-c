@@ -43,3 +43,20 @@ class Company:
             self.accepted(event)
         else:
             self.rejected(event)
+
+    def accepted(self, event):
+        print(f"Application from {event.payload['name']} has been accepted for the {event.payload['job']} position.")
+
+    def rejected(self, event):
+        print(f"Application from {event.payload['name']} has been rejected for the {event.payload['job']} position.")
+
+if __name__ == "__main__":
+    applicant1 = Applicant("ahmet muro", 53, "USA", "ahmetmuro@gmail.com")
+    applicant2 = Applicant("Will Smith", 25, "PL", "Willsmith@gmail.com")
+    applicant3 = Applicant("Ruhi Cenet", 24, "DE", "RuhiCenet@gmail.com")
+
+    company = Company("halil company")
+
+    applicant1.apply("sociology")
+    applicant2.apply("actor")
+    applicant3.apply("farmer")
