@@ -60,3 +60,6 @@ if __name__ == "__main__":
     applicant1.apply("sociology")
     applicant2.apply("actor")
     applicant3.apply("farmer")
+
+    for event in communication_queue:
+        company.process_event(event)
