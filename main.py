@@ -12,3 +12,10 @@ class ApplicationAcceptedEvent(Event):
     name = "application_accepted"
 
 communication_queue = []
+
+class Applicant:
+    def __init__(self, name, age, country, email):
+        self.name = name
+        self.age = age
+        self.country = country
+        self.email = email
