@@ -24,3 +24,7 @@ class Applicant:
         event = ApplicationSubmittedEvent({"name": self.name, "job": job_title})
         communication_queue.append(event) 
         print(f"{self.name}, {job_title}, applied for this job. (Event: {event.name})")
+
+class Company:
+    def __init__(self, name):
+        self.name = name
