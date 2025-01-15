@@ -28,3 +28,11 @@ class Applicant:
 class Company:
     def __init__(self, name):
         self.name = name
+
+    def process_event(self, event):
+        if isinstance(event, ApplicationSubmittedEvent):
+            self.submitted(event)
+        elif isinstance(event, ApplicationAcceptedEvent):
+            self.accepted(event)
+        elif isinstance(event, ApplicationRejectedEvent):
+            self.rejected(event)
