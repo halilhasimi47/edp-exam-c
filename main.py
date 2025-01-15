@@ -19,3 +19,8 @@ class Applicant:
         self.age = age
         self.country = country
         self.email = email
+
+        def apply(self, job_title):
+        event = ApplicationSubmittedEvent({"name": self.name, "job": job_title})
+        communication_queue.append(event) 
+        print(f"{self.name}, {job_title}, applied for this job. (Event: {event.name})")
