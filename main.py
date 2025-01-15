@@ -36,3 +36,10 @@ class Company:
             self.accepted(event)
         elif isinstance(event, ApplicationRejectedEvent):
             self.rejected(event)
+
+    def submitted(self, event):
+        print(f"Company {self.name} received an application from {event.payload['name']} for the job {event.payload['job']}.")
+        if event.payload['name'] == "Ahmet Muro":
+            self.accepted(event)
+        else:
+            self.rejected(event)
